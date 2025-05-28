@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "forum_reactions",
+  "info": {
+    "singularName": "forum-reaction",
+    "pluralName": "forum-reactions",
+    "displayName": "Forum Reaction"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "post": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::forum-post.forum-post"
+    },
+    "reply": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::forum-reply.forum-reply"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::user-vlearn.user-vlearn"
+    },
+    "reaction_type": {
+      "type": "enumeration",
+      "enum": ["like", "helpful", "insightful"]
+    },
+    "created_at": { "type": "datetime" }
+  }
+}

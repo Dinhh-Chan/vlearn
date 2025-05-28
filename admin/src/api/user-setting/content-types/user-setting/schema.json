@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_settings",
+  "info": {
+    "singularName": "user-setting",
+    "pluralName": "user-settings",
+    "displayName": "User-Setting"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "users": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "user_setting"
+    },
+    "notification_email": {
+      "type": "boolean"
+    },
+    "notification_platform": {
+      "type": "boolean"
+    },
+    "notification_sms": {
+      "type": "boolean"
+    },
+    "prevent_video_skipping": {
+      "type": "boolean"
+    }
+  }
+}

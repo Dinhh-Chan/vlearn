@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "system_announcements",
+  "info": {
+    "singularName": "system-announcement",
+    "pluralName": "system-announcements",
+    "displayName": "System Announcement"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "content": { "type": "text" },
+    "target_roles": {
+      "type": "enumeration",
+      "enum": ["admin", "instructor", "learner"],
+      "multiple": true
+    },
+    "start_date": { "type": "datetime" },
+    "end_date": { "type": "datetime" },
+    "is_active": { "type": "boolean" },
+    "created_at": { "type": "datetime" },
+    "created_by": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::user-vlearn.user-vlearn"
+    }
+  }
+}

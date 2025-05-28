@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "singularName": "course",
+    "pluralName": "courses",
+    "displayName": "Course"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "course_code": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string"
+    },
+    "instructor": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "course"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category",
+      "mappedBy": "course"
+    },
+    "thumbnail": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "draft",
+        "pending_approval",
+        "approved"
+      ]
+    },
+    "max_learners": {
+      "type": "biginteger"
+    },
+    "has_certification": {
+      "type": "boolean"
+    },
+    "certification_price": {
+      "type": "biginteger"
+    },
+    "commission_rate": {
+      "type": "integer"
+    },
+    "enrolled_count": {
+      "type": "integer"
+    },
+    "avg_rating": {
+      "type": "decimal"
+    },
+    "course_sections": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course-section.course-section",
+      "mappedBy": "course"
+    }
+  }
+}

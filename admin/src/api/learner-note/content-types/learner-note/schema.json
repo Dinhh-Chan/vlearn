@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "learner_notes",
+  "info": {
+    "singularName": "learner-note",
+    "pluralName": "learner-notes",
+    "displayName": "Learner Note"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::user-vlearn.user-vlearn"
+    },
+    "lesson": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lesson.lesson"
+    },
+    "content": { "type": "text" },
+    "timestamp_seconds": { "type": "integer" },
+    "created_at": { "type": "datetime" },
+    "updated_at": { "type": "datetime" }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "learner_progresses",
+  "info": {
+    "singularName": "learner-progress",
+    "pluralName": "learner-progresses",
+    "displayName": "Learner Progress"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "lesson": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lesson.lesson"
+    },
+    "enrollment": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::enrollment.enrollment"
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": ["not_started", "in_progress", "completed"]
+    },
+    "completion_date": { "type": "datetime" },
+    "time_spent_seconds": { "type": "integer" },
+    "last_position_seconds": { "type": "integer" }
+  }
+}

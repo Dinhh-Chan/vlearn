@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lesson_resources",
+  "info": {
+    "singularName": "lesson-resource",
+    "pluralName": "lesson-resources",
+    "displayName": "Lesson Resource"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "lesson": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lesson.lesson"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "file_url": {
+      "type": "string"
+    },
+    "resource_type": {
+      "type": "enumeration",
+      "enum": [
+        "pdf",
+        "slide",
+        "link",
+        "code"
+      ]
+    }
+  }
+}

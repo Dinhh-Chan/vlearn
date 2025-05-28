@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "course_forums",
+  "info": {
+    "singularName": "course-forum",
+    "pluralName": "course-forums",
+    "displayName": "Course Forum"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "course": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course.course"
+    },
+    "title": { "type": "string", "required": true },
+    "is_active": { "type": "boolean" }
+  }
+}

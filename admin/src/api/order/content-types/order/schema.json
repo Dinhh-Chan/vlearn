@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::user-vlearn.user-vlearn"
+    },
+    "order_date": { "type": "datetime" },
+    "total_amount": { "type": "decimal" },
+    "status": {
+      "type": "enumeration",
+      "enum": ["pending", "completed", "failed", "refunded"]
+    },
+    "payment_method": {
+      "type": "enumeration",
+      "enum": ["credit_card", "bank_transfer", "e_wallet"]
+    },
+    "currency": { "type": "string" },
+    "discount_code": { "type": "string" },
+    "discount_amount": { "type": "decimal" },
+    "created_at": { "type": "datetime" }
+  }
+}

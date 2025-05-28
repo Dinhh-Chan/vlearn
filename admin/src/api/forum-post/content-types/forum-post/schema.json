@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "forum_posts",
+  "info": {
+    "singularName": "forum-post",
+    "pluralName": "forum-posts",
+    "displayName": "Forum Post"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "forum": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course-forum.course-forum"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::user-vlearn.user-vlearn"
+    },
+    "title": { "type": "string" },
+    "content": { "type": "text" },
+    "content_format": {
+      "type": "enumeration",
+      "enum": ["markdown", "html"]
+    },
+    "created_at": { "type": "datetime" },
+    "updated_at": { "type": "datetime" },
+    "is_pinned": { "type": "boolean" }
+  }
+}

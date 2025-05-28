@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quiz_answer_options",
+  "info": {
+    "singularName": "quiz-answer-option",
+    "pluralName": "quiz-answer-options",
+    "displayName": "Quiz Answer Option"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "question": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::quiz-question.quiz-question"
+    },
+    "option_text": { "type": "text" },
+    "is_correct": { "type": "boolean" },
+    "explanation": { "type": "text" },
+    "order_number": { "type": "integer" }
+  }
+}

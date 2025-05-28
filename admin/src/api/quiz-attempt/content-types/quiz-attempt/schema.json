@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quiz_attempts",
+  "info": {
+    "singularName": "quiz-attempt",
+    "pluralName": "quiz-attempts",
+    "displayName": "Quiz Attempt"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "quiz": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::quiz.quiz"
+    },
+    "start_time": { "type": "datetime" },
+    "submit_time": { "type": "datetime" },
+    "score": { "type": "decimal" },
+    "is_passing": { "type": "boolean" },
+    "attempt_number": { "type": "integer" }
+  }
+}

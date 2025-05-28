@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "video_lessons",
+  "info": {
+    "singularName": "video-lesson",
+    "pluralName": "video-lessons",
+    "displayName": "Video Lesson"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "lesson": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lesson.lesson",
+      "inversedBy": "video_lesson"
+    },
+    "video_url": {
+      "type": "string"
+    },
+    "embed_code": {
+      "type": "string"
+    },
+    "transcript": {
+      "type": "string"
+    },
+    "prevent_skipping": {
+      "type": "boolean"
+    },
+    "encryption_key": {
+      "type": "string"
+    }
+  }
+}

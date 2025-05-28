@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quiz_questions",
+  "info": {
+    "singularName": "quiz-question",
+    "pluralName": "quiz-questions",
+    "displayName": "Quiz Question"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "quiz": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::quiz.quiz"
+    },
+    "question_text": { "type": "text" },
+    "question_type": {
+      "type": "enumeration",
+      "enum": ["multiple_choice", "true_false", "short_answer", "matching"]
+    },
+    "points": { "type": "integer" },
+    "order_number": { "type": "integer" }
+  }
+}

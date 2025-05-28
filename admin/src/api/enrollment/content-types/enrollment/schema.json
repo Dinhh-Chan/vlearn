@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "enrollments",
+  "info": {
+    "singularName": "enrollment",
+    "pluralName": "enrollments",
+    "displayName": "Enrollment"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::user-vlearn.user-vlearn"
+    },
+    "course": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course.course"
+    },
+    "enrollment_date": { "type": "datetime" },
+    "is_active": { "type": "boolean" },
+    "last_accessed": { "type": "datetime" },
+    "completion_percentage": { "type": "decimal" },
+    "expiry_date": { "type": "datetime" },
+    "status": {
+      "type": "enumeration",
+      "enum": ["active", "completed", "paused"]
+    }
+  }
+}

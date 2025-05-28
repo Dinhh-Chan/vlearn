@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "course_ratings",
+  "info": {
+    "singularName": "course-rating",
+    "pluralName": "course-ratings",
+    "displayName": "Course Rating"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "enrollment": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::enrollment.enrollment"
+    },
+    "rating": { "type": "integer" },
+    "review": { "type": "text" },
+    "created_at": { "type": "datetime" },
+    "updated_at": { "type": "datetime" },
+    "is_approved": { "type": "boolean" }
+  }
+}

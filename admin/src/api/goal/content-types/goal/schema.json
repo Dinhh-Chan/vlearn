@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "goals",
+  "info": {
+    "singularName": "goal",
+    "pluralName": "goals",
+    "displayName": "Goal"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::user-vlearn.user-vlearn"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["learning_time", "lesson_count"]
+    },
+    "value": { "type": "integer" },
+    "deadline": { "type": "datetime" },
+    "created_at": { "type": "datetime" }
+  }
+}

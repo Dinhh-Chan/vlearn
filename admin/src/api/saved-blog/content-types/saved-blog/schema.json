@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "saved_blogs",
+  "info": {
+    "singularName": "saved-blog",
+    "pluralName": "saved-blogs",
+    "displayName": "Saved Blog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::user-vlearn.user-vlearn"
+    },
+    "saved_date": { "type": "datetime" }
+  }
+  }

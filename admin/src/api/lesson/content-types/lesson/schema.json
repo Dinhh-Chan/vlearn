@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lessons",
+  "info": {
+    "singularName": "lesson",
+    "pluralName": "lessons",
+    "displayName": "lesson"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "course_section": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course-section.course-section",
+      "inversedBy": "lessons"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "content_types": {
+      "type": "enumeration",
+      "enum": [
+        "video",
+        "article",
+        "quiz",
+        "assignment"
+      ]
+    },
+    "duration_minutes": {
+      "type": "integer"
+    },
+    "order_number": {
+      "type": "integer"
+    },
+    "is_free_preview": {
+      "type": "boolean"
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "draft",
+        "pending_approval",
+        "approved",
+        "rejected"
+      ]
+    },
+    "video_lesson": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::video-lesson.video-lesson",
+      "mappedBy": "lesson"
+    },
+    "article_lesson": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::article-lesson.article-lesson",
+      "mappedBy": "lesson"
+    }
+  }
+}

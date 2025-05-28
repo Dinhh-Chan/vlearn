@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "notifications",
+  "info": {
+    "singularName": "notification",
+    "pluralName": "notifications",
+    "displayName": "Notification"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::user-vlearn.user-vlearn"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["course_update", "forum_activity", "transaction", "system"]
+    },
+    "title": { "type": "string" },
+    "content": { "type": "text" },
+    "is_read": { "type": "boolean" },
+    "created_at": { "type": "datetime" },
+    "related_id": { "type": "string" },
+    "related_type": { "type": "string" }
+  }
+}

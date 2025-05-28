@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transactions",
+  "info": {
+    "singularName": "transaction",
+    "pluralName": "transactions",
+    "displayName": "Transaction"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "order": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order.order"
+    },
+    "amount": { "type": "decimal" },
+    "transaction_date": { "type": "datetime" },
+    "payment_gateway": { "type": "string" },
+    "gateway_transaction_id": { "type": "string" },
+    "status": {
+      "type": "enumeration",
+      "enum": ["pending", "completed", "failed"]
+    }
+  }
+}

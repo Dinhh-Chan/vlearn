@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "saved_posts",
+  "info": {
+    "singularName": "saved-post",
+    "pluralName": "saved-posts",
+    "displayName": "Saved Post"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::user-vlearn.user-vlearn"
+    },
+    "post": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::forum-post.forum-post"
+    },
+    "saved_at": { "type": "datetime" }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "instructor_payouts",
+  "info": {
+    "singularName": "instructor-payout",
+    "pluralName": "instructor-payouts",
+    "displayName": "Instructor Payout"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "instructor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::user-vlearn.user-vlearn"
+    },
+    "amount": { "type": "decimal" },
+    "payout_date": { "type": "datetime" },
+    "period_start": { "type": "date" },
+    "period_end": { "type": "date" },
+    "status": {
+      "type": "enumeration",
+      "enum": ["pending", "processed", "failed"]
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_vlearns",
+  "info": {
+    "singularName": "user-vlearn",
+    "pluralName": "user-vlearns",
+    "displayName": "UserVlearn"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "phone_number": {
+      "type": "string"
+    },
+    "password_hash": {
+      "type": "password"
+    },
+    "full_name": {
+      "type": "string"
+    },
+    "birth_year": {
+      "type": "integer"
+    },
+    "role": {
+      "type": "enumeration",
+      "enum": [
+        "admin",
+        "instructor",
+        "learner"
+      ]
+    },
+    "profile_picture": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "auth_provider": {
+      "type": "enumeration",
+      "enum": [
+        "email",
+        "google",
+        "facebook",
+        "null"
+      ]
+    },
+    "auth_provider_id": {
+      "type": "string"
+    },
+    "is_active": {
+      "type": "boolean"
+    },
+    "preferred_language": {
+      "type": "enumeration",
+      "enum": [
+        "vi",
+        "en"
+      ]
+    },
+    "ui_theme": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark"
+      ]
+    },
+    "last_login": {
+      "type": "datetime"
+    }
+  }
+}

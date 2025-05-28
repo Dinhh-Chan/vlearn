@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "article_lessons",
+  "info": {
+    "singularName": "article-lesson",
+    "pluralName": "article-lessons",
+    "displayName": "Article Lesson"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "lesson": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lesson.lesson",
+      "inversedBy": "article_lesson"
+    },
+    "content": {
+      "type": "string"
+    },
+    "content_format": {
+      "type": "enumeration",
+      "enum": [
+        "markdown",
+        "html"
+      ]
+    }
+  }
+}

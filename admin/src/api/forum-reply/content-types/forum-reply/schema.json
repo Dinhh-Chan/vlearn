@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "forum_replies",
+  "info": {
+    "singularName": "forum-reply",
+    "pluralName": "forum-replies",
+    "displayName": "Forum Reply"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "post": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::forum-post.forum-post"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::user-vlearn.user-vlearn"
+    },
+    "content": { "type": "text" },
+    "created_at": { "type": "datetime" },
+    "updated_at": { "type": "datetime" }
+  }
+}

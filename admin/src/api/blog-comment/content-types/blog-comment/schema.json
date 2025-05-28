@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blog_comments",
+  "info": {
+    "singularName": "blog-comment",
+    "pluralName": "blog-comments",
+    "displayName": "Blog Comment"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::user-vlearn.user-vlearn"
+    },
+    "post": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::blog-post.blog-post"
+    },
+    "content": { "type": "text" },
+    "created_at": { "type": "datetime" },
+    "updated_at": { "type": "datetime" },
+    "is_approved": { "type": "boolean" }
+  }
+}

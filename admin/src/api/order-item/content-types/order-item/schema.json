@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "order_items",
+  "info": {
+    "singularName": "order-item",
+    "pluralName": "order-items",
+    "displayName": "Order Item"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "course": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course.course"
+    },
+    "order": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order.order"
+    },
+    "price": { "type": "decimal" },
+    "is_certification_exam": { "type": "boolean" },
+    "exam_price": { "type": "decimal" }
+  }
+}

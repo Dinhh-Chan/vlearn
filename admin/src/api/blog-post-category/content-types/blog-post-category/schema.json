@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blog_post_categories",
+  "info": {
+    "singularName": "blog-post-category",
+    "pluralName": "blog-post-categories",
+    "displayName": "Blog Post Category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "post": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::blog-post.blog-post"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::blog-category.blog-category"
+    }
+  }
+}
